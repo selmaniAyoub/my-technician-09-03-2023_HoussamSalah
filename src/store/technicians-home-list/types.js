@@ -1,0 +1,1 @@
+export const DOCTORS_HOME_LIST = "DOCTORS_HOME_LIST";

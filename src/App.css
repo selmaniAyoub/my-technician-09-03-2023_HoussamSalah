@@ -1,0 +1,22 @@
+.fc-header-toolbar.fc-toolbar{
+    flex-wrap: wrap;
+}
+
+.fc-view-harness.fc-view-harness-active{
+    min-height: 700px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.fc-timegrid.fc-timeGridWeek-view.fc-view{
+    min-width: 700px;
+}
+
+.fc-col-header{
+    min-width: 100%;
+    color:red;
+}
+
+.fc-daygrid-body, .fc-scrollgrid-sync-table{
+    min-width: 100%;
+}

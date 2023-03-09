@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+.MuiTabs-flexContainer{
+  overflow-x: auto;
+}
+
+.timeBtn{
+  width: auto !important;
+  max-width: 100px !important;
+  padding: 5px !important;
+  margin: 5px !important;
+  border-left: 1px solid rgba(0,0,0,0.12) !important;
+  border-radius: 4px !important;
+}
+
+
+.example-appear {
+  opacity: 0.04;
+}
+.example-appear.example-appear-active {
+  opacity: 2;
+  transition: opacity 50s ease-in;
+}

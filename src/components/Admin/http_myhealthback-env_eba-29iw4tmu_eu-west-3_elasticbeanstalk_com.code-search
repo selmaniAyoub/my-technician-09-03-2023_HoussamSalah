@@ -1,0 +1,373 @@
+# Query: http://myhealthback-env.eba-29iw4tmu.eu-west-3.elasticbeanstalk.com
+# ContextLines: 1
+
+79 résultats - Fichiers 53
+
+src\thunks.js:
+   11      try {
+   12:         const res = await axios.post('http://localhost:8001/auth/signin', data);
+   13          
+
+  122      try{
+  123:         await axios.put('http://localhost:8001/auth/logout');
+  124          localStorage.removeItem('jwtToken');
+
+  152      try {
+  153:         const { data } = await axios.get('http://localhost:8001/search/most/viewed');
+  154          
+
+src\components\Admin\EditPassword.jsx:
+  103              setDisable(true)
+  104:             axios.put('http://localhost:8001/users/changepassword', data, {
+  105                  cancelToken: source.token
+
+src\components\Admin\Appointments\Appointments.jsx:
+  51              //api all rendezvous compte Med
+  52:             axios.get(`http://localhost:8001/rendezvous/AllRdvPerso`)
+  53                  .then((res) => {  
+
+  62               //api all rendezvous compte Med
+  63:              axios.get(`http://localhost:8001/rendezvous/AllRdvPatient`)
+  64               .then((res) => {
+
+  71                     //     axios
+  72:                   //     .get(`http://localhost:8001/admin/single/patient/${elem.patientId}`)
+  73                     //     .then((res) => {
+
+src\components\Admin\Appointments\AppointmentsTable.jsx:
+  245             // console.log(rowMenu.id);
+  246:             const { data } = await axios.post(`http://localhost:8001/rendezvous/AccepterRefuser/${rowMenu.id}/accepter` )
+  247              console.log("data API Confirm :",data  );    
+
+  271              console.log("rowMenu.id : ",rowMenu.id);
+  272:             const { data } = await axios.post(`http://localhost:8001/rendezvous/AccepterRefuser/${rowMenu.id}/refuser`)
+  273             console.log("data API Cancel  :",data  );    
+
+src\components\Admin\Appointments\UserAppointmentsTable.jsx:
+  258  //     return () => {
+  259: //         axios.get(`http://localhost:8001/admin/single/patient/${appointments[0].patientId}`)
+  260  //            .then((res) => {
+
+src\components\Admin\Dashboard\AdminDashboard.jsx:
+  260              this.setState({ loading: true })
+  261:             const { data } = await axios.get("http://localhost:8001/stats/info")
+  262  
+
+src\components\Admin\Doctors\Doctors.jsx:
+  35              this.setState({ loading: true })
+  36:             const { data } = await axios.get("http://localhost:8001/search/personnels")
+  37              if (data && typeof data !== "string") {
+
+src\components\Admin\Doctors\DoctorsTable.jsx:
+  314          setLoading(true)
+  315:         axios.post(`http://localhost:8001/admin/ban/${rowMenu.id}`)
+  316              .then(res => {
+
+  329          setLoading(true);
+  330:         axios.post(`http://localhost:8001/admin/unban/${rowMenu.id}`)
+  331              .then(res => {
+
+  344          setLoading(true);
+  345:         axios.post(`http://localhost:8001/admin/delete/${rowMenu.id}`)
+  346              .then(res => {
+
+src\components\Admin\Forum\ChatAction.jsx:
+  138  
+  139: const url = `http://localhost:8001/bilel-moussa/upload`;
+  140  
+
+src\components\Admin\Forum\MembersSide.jsx:
+  100          if (room && role === "admin") {
+  101:             axios.get(`http://localhost:8001/search/members/forum/${room}`)
+  102                  .then(res => {
+
+  114          if (!room && role !== "admin") {
+  115:             axios.get(`http://localhost:8001/search/members/forum/${role}`)
+  116                  .then(res => {
+
+src\components\Admin\Forum\MyMessage.jsx:
+  175          setLoading(true)
+  176:         axios.delete(`http://localhost:8001/users/delete/message/${message.id}`)
+  177              .then(res => {
+
+src\components\Admin\Forum\OthersMessage.jsx:
+  170          setLoading(true)
+  171:         axios.delete(`http://localhost:8001/users/delete/message/${message.id}`)
+  172              .then(res => {
+
+src\components\Admin\MyDoctors\MyDoctors.jsx:
+  35              this.setState({ loading: true })
+  36:             const { data } = await axios.get("http://localhost:8001/users/mypersonnels")
+  37              if (data) {
+
+src\components\Admin\MyPatients\MyPatients.jsx:
+  35              this.setState({ loading: true })
+  36:             const { data } = await axios.get("http://localhost:8001/users/mypatients")
+  37              if (data) {
+
+src\components\Admin\Notification\Notification.jsx:
+  145                  this.setState({ loading: true })
+  146:                 const { data } = await axios.get(`http://localhost:8001/notifications/${user.id}/0/5`);
+  147                  if (data) {
+
+  169                  <SockJsClient
+  170:                     url='http://localhost:8001/notification'
+  171                      topics={[`/topic/notifications/${user.username}`]}
+
+src\components\Admin\Notification\Notifications.jsx:
+  118          if (user) {
+  119:             axios.get(`http://localhost:8001/notifications/${user.id}/0/10`)
+  120                  .then(res => {
+
+src\components\Admin\Profile\EditPohtosCabinet.jsx:
+  104  
+  105: const url = `http://localhost:8001/bilel-moussa/upload`;
+  106  
+
+  191              if (data.photoCabinet !== props?.user?.photoCabinet) {
+  192:                 const res = await axios.put('http://localhost:8001/users/edit/photocabinet', data)
+  193  
+
+src\components\Admin\Profile\Profile.jsx:
+  214          try {
+  215:             const { data } = await axios.get(`http://localhost:8001/search/user/${userSy.id}/`);
+  216              if (data) {
+
+src\components\Admin\Profile\Certification\DialogCertification.jsx:
+   38  
+   39: const url = `http://localhost:8001/bilel-moussa/upload`;
+   40  
+
+  201                  }
+  202:                 await axios.post('http://localhost:8001/profile/add/diplome', data)
+  203                  this.setState({ loading: false })
+
+  231                      }
+  232:                     await axios.put(`http://localhost:8001/profile/update/diplome/${id}`, data)
+  233                      this.setState({ loading: false })
+
+src\components\Admin\Profile\Certification\EditCertification.jsx:
+  186          setLoading(true)
+  187:         axios.delete(`http://localhost:8001/profile/delete/diplome/${certification.id}`)
+  188              .then((res) => {
+
+src\components\Admin\Profile\Description\DialogDescription.jsx:
+  64  
+  65:         axios.put('http://localhost:8001/profile/update/description', data)
+  66              .then((res) => {
+
+src\components\Admin\Profile\Diplome\DialogDiplome.jsx:
+   37  
+   38: const url = `http://localhost:8001/bilel-moussa/upload`;
+   39  
+
+  200                  }
+  201:                 await axios.post('http://localhost:8001/profile/add/diplome', data)
+  202                  this.setState({ loading: false })
+
+  230                      }
+  231:                     await axios.put(`http://localhost:8001/profile/update/diplome/${id}`, data)
+  232                      this.setState({ loading: false })
+
+src\components\Admin\Profile\Diplome\EditDiplomes.jsx:
+  186          setLoading(true)
+  187:         axios.delete(`http://localhost:8001/profile/delete/diplome/${diplome.id}`)
+  188              .then((res) => {
+
+src\components\Admin\Profile2\EditPohtosCabinet.jsx:
+  104  
+  105: const url = `http://localhost:8001/bilel-moussa/upload`;
+  106  
+
+  191              if (data.photoCabinet !== props?.user?.photoCabinet) {
+  192:                 const res = await axios.put('http://localhost:8001/users/edit/photocabinet', data)
+  193  
+
+src\components\Admin\Profile2\ProfileDetails.jsx:
+  215          try {
+  216:             const { data } = await axios.get(`http://localhost:8001/search/user/${userSy.id}/`);
+  217              if (data) {
+
+src\components\Admin\Profile2\Certification\DialogCertification.jsx:
+   38  
+   39: const url = `http://localhost:8001/bilel-moussa/upload`;
+   40  
+
+  201                  }
+  202:                 await axios.post('http://localhost:8001/profile/add/diplome', data)
+  203                  this.setState({ loading: false })
+
+  231                      }
+  232:                     await axios.put(`http://localhost:8001/profile/update/diplome/${id}`, data)
+  233                      this.setState({ loading: false })
+
+src\components\Admin\Profile2\Certification\EditCertification.jsx:
+  186          setLoading(true)
+  187:         axios.delete(`http://localhost:8001/profile/delete/diplome/${certification.id}`)
+  188              .then((res) => {
+
+src\components\Admin\Profile2\Description\DialogDescription.jsx:
+  64  
+  65:         axios.put('http://localhost:8001/profile/update/description', data)
+  66              .then((res) => {
+
+src\components\Admin\Profile2\Diplome\DialogDiplome.jsx:
+   37  
+   38: const url = `http://localhost:8001/bilel-moussa/upload`;
+   39  
+
+  200                  }
+  201:                 await axios.post('http://localhost:8001/profile/add/diplome', data)
+  202                  this.setState({ loading: false })
+
+  230                      }
+  231:                     await axios.put(`http://localhost:8001/profile/update/diplome/${id}`, data)
+  232                      this.setState({ loading: false })
+
+src\components\Admin\Profile2\Diplome\EditDiplomes.jsx:
+  186          setLoading(true)
+  187:         axios.delete(`http://localhost:8001/profile/delete/diplome/${diplome.id}`)
+  188              .then((res) => {
+
+src\components\Admin\SingleAppointment\doc.jsx:
+  108              setLoading(true)
+  109:             axios.get(`http://localhost:8001/rendezvous/single/${appointmentId}`)
+  110                  .then((res) => {
+
+src\components\Admin\SingleAppointment\SingleAppointment.jsx:
+  104                     setLoading(true)
+  105:                      axios.get(`http://localhost:8001/rendezvous/single/${appointmentId}`)
+  106                         .then((res) => {
+
+  124                               axios
+  125:                                 .get(`http://localhost:8001/admin/single/patient/${patientId}`)
+  126                                  .then((res) => {
+
+  137                                axios
+  138:                               .get(`http://localhost:8001/admin/single/personnel/${personnelId}`)
+  139                                .then((res) => {
+
+src\components\Admin\SingleDoctor\SingleDoctor.jsx:
+  62                  this.setState({ loading: true })
+  63:                 const { data } = await axios.get(`http://localhost:8001/search/user/${praticienId}/`);
+  64                  if (data && typeof data === "object") {
+
+src\components\Admin\SinglePatient\SinglePatient.jsx:
+  53                  this.setState({ loading: true })
+  54:                 const { data } = await axios.get(`http://localhost:8001/search/user/${patientId}`);
+  55                  if (data && typeof data === "object") {
+
+src\components\Public\LoginPage\LoginPage.jsx:
+  248              const data = { email, password }
+  249:             axios.post('http://localhost:8001/auth/signin', data, {
+  250                  signal: controller.signal
+
+src\components\Public\RegisterPage\RegisterPage.jsx:
+  298  
+  299:             axios.post('http://localhost:8001/auth/signup', data, {
+  300                  cancelToken: source.token
+
+src\components\Public\RegisterSpecialty\RegisterDentist.jsx:
+  322  
+  323:             axios.post('http://localhost:8001/auth/signupdentiste', data, {
+  324                  cancelToken: source.token
+
+src\components\Public\RegisterSpecialty\RegisterDoctor.jsx:
+  318  
+  319:             axios.post('http://localhost:8001/auth/signupmedecin', data, {
+  320                  cancelToken: source.token
+
+src\components\Public\RegisterSpecialty\RegisterPharmacy.jsx:
+  312  
+  313:             axios.post('http://localhost:8001/auth/signuppharmacie', data, {
+  314                  cancelToken: source.token
+
+src\components\Public\RegisterSpecialty\RegisterPhysiotherapist.jsx:
+  315  
+  316:             axios.post('http://localhost:8001/auth/signupkine', data, {
+  317                  cancelToken: source.token
+
+src\components\Public\RegisterSpecialty\RegisterPsychologist.jsx:
+  320  
+  321:             axios.post('http://localhost:8001/auth/signuppsychologue', data, {
+  322                  cancelToken: source.token
+
+src\components\Public\RegisterSpecialty\RegisterVeterinary.jsx:
+  318  
+  319:             axios.post('http://localhost:8001/auth/signupveterinaire', data, {
+  320                  cancelToken: source.token
+
+src\components\Public\RegisterSpecialty\RegisterVeterinary2.jsx:
+  318  
+  319:             axios.post('http://localhost:8001/auth/signupveterinaire', data, {
+  320                  cancelToken: source.token
+
+src\components\Public\RegisterSpecialty\RegisterVetilation.jsx:
+  318  
+  319:             axios.post('http://localhost:8001/auth/signupveterinaire', data, {
+  320                  cancelToken: source.token
+
+src\components\Public\SearchDoctors\SearchDoctors.jsx:
+  82              setLoading(true)
+  83:             axios.post("http://localhost:8001/search/personnel/precise", info)
+  84                  .then((res) => {
+
+src\components\Public\SingleDoctorPage\AppointmentSection.jsx:
+  126                    console.log("data : ",data )
+  127:                 axios.post(`http://localhost:8001/rendezvous/add/${user.id}/${doc.id}`, data)
+  128                      .then((res) => {
+
+src\components\Public\SingleDoctorPage\ConsultationSection.jsx:
+  181  
+  182:                 const { data } = await axios.get(`http://localhost:8001/search/schedule/${docId}`);
+  183  
+
+  254                    console.log("data : ",data )
+  255:                 axios.post(`http://localhost:8001/rendezvous/add/${user.id}/${doc.id}`, data)
+  256                      .then((res) => {
+
+src\components\Public\SingleDoctorPage\SingleDoctorPage.jsx:
+  79  
+  80:                 const { data } = await axios.get(`http://localhost:8001/search/user/${docId}`);
+  81  
+
+src\routes\Admin\AddSchedule.jsx:
+  86  			await axios
+  87: 				.get(`http://localhost:8001/rendezvous/schedule/${id}`)
+  88  				.then((res) => {
+
+src\routes\Admin\AddScheduleUser.jsx:
+  69  			await axios
+  70: 				.get(`http://localhost:8001/ /schedule/${id}`)
+  71  				.then((res) => {
+
+src\routes\Admin\docaddShedeules.jsx:
+  104              if (id) {
+  105:                 const { data } = await axios.get(`http://localhost:8001/search/schedule/${id}`);
+  106  
+
+  147              this.setState({ disabled: true })
+  148:             axios.post(`http://localhost:8001/schedule/add/${user.id}`, data, {
+  149                  cancelToken: source.token
+
+src\routes\Admin\PersonnelForum.jsx:
+  27                  this.setState({ room: room })
+  28:                 axios.get(`http://localhost:8001/search/admin/messages/${room}s`)
+  29                      .then(res => {
+
+  40                  this.setState({ room: role })
+  41:                 axios.get(`http://localhost:8001/search/user/message/${user.id}`)
+  42                      .then(res => {
+
+  88                          <SockJsClient
+  89:                             url='http://localhost:8001/chat'
+  90                              topics={[`/topic/messages/${room}s`]}
+
+src\routes\Admin\Shedules.jsx:
+   70                     
+   71:     //                     const { data } = await axios.get(`http://localhost:8001/rendezvous/schedule/${id}`);
+   72      //                     console.log(data);
+
+  103  			await axios
+  104: 				.get(`http://localhost:8001/rendezvous/schedule/${id}`)
+  105  				.then((res) => {
